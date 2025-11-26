@@ -1,0 +1,12 @@
+{
+  "endpoints": [
+    {
+      "baseUrl": "https://ocpi.chargepoint.com/",
+      "token": "ORG ==NA==PROD==DEN=="
+    },
+    {
+      "baseUrl": "https://ocpi-ca.chargepoint.com/",
+      "token": "ORG ==CA==PROD==DEN=="
+    }
+  ]
+}

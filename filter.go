@@ -37,9 +37,7 @@ func filterJsonPage(jsonPage <-chan []byte, outError chan<- []byte, allDone func
 
 		for _, loc := range ld.Data {
 			ok := filterDuplicateStations(&loc)
-			if !ok {
-				duplicateCount++
-			} else {
+			if ok {
 				txt, err := json.Marshal(loc)
 				if nil != err {
 					xLog.Printf("error marshalling station: %s", err.Error())
@@ -77,10 +75,11 @@ func printDuplicateStats() {
 		sb.WriteString(k)
 		sb.WriteRune(' ')
 	}
+	xLog.Printf("%s", sb.String())
 }
 
-var stations = make(map[string]struct{}, 200000)
-var dupStations = make(map[string]struct{}, 100)
+var stations = make(map[string]struct{}, 16384)
+var dupStations = make(map[string]struct{}, 8)
 
 // filterDuplicateStations checks if a station is already present
 // in the stations map, filtering out duplicates. It adds new

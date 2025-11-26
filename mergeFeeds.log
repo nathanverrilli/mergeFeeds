@@ -1,0 +1,58 @@
+2025/11/26 01:04:34 logger.go:156: 
+	 main.init.0 main.go:16 
+		 main.initLog logger.go:94 :Logfile set to D:\OneDrive - ChargePoint\Projects\mergeFeeds\mergeFeeds.log
+2025/11/26 01:04:34 config.go:123: 		/*** start program flags ***/
+
+ flag debug has value [true] with default [true]
+ flag debugger has value [false] with default [false]
+ flag help has value [false] with default [false]
+ flag insecure has value [false] with default [false]
+ flag maxcalls has value [0] with default [0]
+ flag quiet has value [false] with default [false]
+ flag slow has value [true] with default [false]
+ flag tokens has value [no_endpoints.json] with default [endpoints.json]
+ flag verbose has value [true] with default [true]
+2025/11/26 01:04:34 config.go:125: 		/***   end program flags ***/
+2025/11/26 01:04:34 config.go:148: Verbose mode active (all debug and informative messages) for MYTHOSSEED\Nathan@MythosSeed
+2025/11/26 01:04:34 config.go:160: 
+***** ___1go_build_mergeFeeds BuildInfo: *****
+go	go1.25.4 X:jsonv2
+path	mergeFeeds
+mod	mergeFeeds	v0.0.0-20251126004915-e4aed04b43bd+dirty	
+dep	github.com/nathanverrilli/denJson	v0.1.0	h1:ECPe4LfHdY1sz59aesBkRKFJo6FqUfr8bRg3z0CQWew=
+dep	github.com/nathanverrilli/nlvMisc	v0.1.0	h1:E/DgcLv/Q4hfMw0zQ6sVvlM+En8ejSxedm2qJGSeZqw=
+dep	github.com/shopspring/decimal	v1.4.0	h1:bxl37RwXBklmTi0C79JfXCEBD1cqqHt0bbgBAGFp81k=
+dep	github.com/spf13/pflag	v1.0.10	h1:4EBh2KAYBwaONj6b2Ye1GiHfwjqyROoF4RwYO+vPwFk=
+build	-buildmode=exe
+build	-compiler=gc
+build	-gcflags="all=-N -l"
+build	CGO_ENABLED=0
+build	GOARCH=amd64
+build	GOEXPERIMENT=jsonv2
+build	GOOS=windows
+build	GOAMD64=v1
+build	vcs=git
+build	vcs.revision=e4aed04b43bd2e791cbda081a814be8baa618e7d
+build	vcs.time=2025-11-26T00:49:15Z
+build	vcs.modified=true
+
+*********************************************
+2025/11/26 01:05:15 mergefeeds.go:67: Processing https://ocpi.chargepoint.com/den/cpo/1.0/locations/?limit=1000&offset=0
+2025/11/26 01:05:15 mergefeeds.go:67: Processing https://ocpi-ca.chargepoint.com/den/cpo/1.0/locations/?limit=1000&offset=0
+2025/11/26 01:05:18 request.go:143: next header: https://ocpi-ca.chargepoint.com/den/cpo/1.0/locations/?offset=1000&limit=1000
+2025/11/26 01:05:18 mergefeeds.go:67: Processing https://ocpi-ca.chargepoint.com/den/cpo/1.0/locations/?offset=1000&limit=1000
+2025/11/26 01:05:20 request.go:143: next header: https://ocpi-ca.chargepoint.com/den/cpo/1.0/locations/?offset=2000&limit=1000
+2025/11/26 01:05:20 mergefeeds.go:67: Processing https://ocpi-ca.chargepoint.com/den/cpo/1.0/locations/?offset=2000&limit=1000
+2025/11/26 01:05:22 request.go:143: next header: https://ocpi-ca.chargepoint.com/den/cpo/1.0/locations/?offset=3000&limit=1000
+2025/11/26 01:05:22 mergefeeds.go:67: Processing https://ocpi-ca.chargepoint.com/den/cpo/1.0/locations/?offset=3000&limit=1000
+2025/11/26 01:05:25 request.go:143: next header: https://ocpi-ca.chargepoint.com/den/cpo/1.0/locations/?offset=4000&limit=1000
+2025/11/26 01:05:25 mergefeeds.go:67: Processing https://ocpi-ca.chargepoint.com/den/cpo/1.0/locations/?offset=4000&limit=1000
+2025/11/26 01:05:25 request.go:143: next header: https://ocpi.chargepoint.com/den/cpo/1.0/locations/?offset=1000&limit=1000
+2025/11/26 01:05:25 mergefeeds.go:67: Processing https://ocpi.chargepoint.com/den/cpo/1.0/locations/?offset=1000&limit=1000
+2025/11/26 01:05:27 request.go:143: next header: https://ocpi-ca.chargepoint.com/den/cpo/1.0/locations/?offset=5000&limit=1000
+2025/11/26 01:05:27 mergefeeds.go:67: Processing https://ocpi-ca.chargepoint.com/den/cpo/1.0/locations/?offset=5000&limit=1000
+2025/11/26 01:05:29 request.go:143: next header: https://ocpi-ca.chargepoint.com/den/cpo/1.0/locations/?offset=6000&limit=1000
+2025/11/26 01:05:29 mergefeeds.go:67: Processing https://ocpi-ca.chargepoint.com/den/cpo/1.0/locations/?offset=6000&limit=1000
+2025/11/26 01:05:31 request.go:143: next header: https://ocpi-ca.chargepoint.com/den/cpo/1.0/locations/?offset=7000&limit=1000
+2025/11/26 01:05:31 mergefeeds.go:67: Processing https://ocpi-ca.chargepoint.com/den/cpo/1.0/locations/?offset=7000&limit=1000
+2025/11/26 01:05:33 request.go:143: 

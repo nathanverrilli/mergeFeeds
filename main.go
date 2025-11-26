@@ -29,25 +29,10 @@ func init() {
 	signal.Notify(signalChan, os.Interrupt, os.Kill)
 	go misc.HandleSignal(signalChan)
 
-	loadFeedEndpointsAuth()
-
 }
 
-var productionEndpointUrls []string
-var ProductionEndpointTokens []string
-
 func main() {
-	/**********
-	var productionEndpointUrls = []string {
-		"https://ocpi.chargepoint.com/",    // NA region base
-		"https://ocpi-ca.chargepoint.com/", // CA region base
-	}
-	var ProductionEndpointTokens = []string{
 
-		"Org ==NA==PROD==DEN==", // NA Org Token
-		"Org ==CA==PROD==DEN==", // CA Org Token
-
-	} *******************/
 	var url = "den/cpo/1.0/locations/?limit=1000&offset=0"
 
 	var err error
@@ -64,6 +49,10 @@ func main() {
 
 	go misc.RecordBytes("error.log", outError, wgError.Done)
 	go filterJsonPage(outJson, outError, wgJson.Done)
+
+	// load endpoints
+	_, productionEndpointUrls, ProductionEndpointTokens := loadEndpoints(FlagAuthTokenFile)
+
 	go func() {
 		err = mergeFeeds(productionEndpointUrls, ProductionEndpointTokens, url, outJson, outError, wgFeeds.Done)
 		if err != nil {
